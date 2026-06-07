@@ -32,7 +32,7 @@ app-repo/
 ### Run Locally
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_ORG/devops-app-repo.git
+git clone https://github.com/YOUR_ORG/web-app-devops-repo.git
 cd devops-app-repo
 
 # Option 1: Python directly
