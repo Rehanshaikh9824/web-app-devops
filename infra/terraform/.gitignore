@@ -1,0 +1,14 @@
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
+.terraform.lock.hcl
+terraform.tfvars
+*.pem
+*.key
+.env
+.DS_Store
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
