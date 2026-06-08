@@ -29,7 +29,7 @@ HTML_TEMPLATE = """
 <body>
     <div class="card">
         <h1>🚀 DevOps Web Application</h1>
-        <p>Deployed on AWS EKS via CI/CD Pipeline</p>
+        <p>Deployed on Azure AKS via CI/CD Pipeline</p>
         <span class="badge">Docker</span>
         <span class="badge">Kubernetes</span>
         <span class="badge">Terraform</span>
@@ -51,12 +51,12 @@ def home():
         hostname=socket.gethostname(),
         env=os.environ.get("APP_ENV", "production"),
         version=os.environ.get("APP_VERSION", "1.0.0"),
-        timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+        timestamp=datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
     )
 
 @app.route("/health")
 def health():
-    return jsonify({"status": "healthy", "timestamp": datetime.datetime.utcnow().isoformat()}), 200
+    return jsonify({"status": "healthy", "timestamp": datetime.datetime.now(datetime.UTC).isoformat()}), 200
 
 @app.route("/ready")
 def ready():

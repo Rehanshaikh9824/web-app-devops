@@ -2,7 +2,7 @@
 FROM python:3.11-slim AS builder
 
 WORKDIR /build
-COPY app/requirements.txt .
+COPY requirements.txt .
 
 RUN pip install --upgrade pip \
     && pip install --prefix=/install --no-cache-dir -r requirements.txt
@@ -19,7 +19,7 @@ WORKDIR /app
 COPY --from=builder /install /usr/local
 
 # Copy application source
-COPY app/ .
+COPY   . .
 
 # Environment defaults
 ENV PORT=5000 \
