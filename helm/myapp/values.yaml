@@ -1,0 +1,32 @@
+replicaCount: 2
+
+image:
+  repository: myaksacr12345.azurecr.io/flask-app
+  tag: "v1"
+  pullPolicy: IfNotPresent
+
+serviceAccount:
+  create: true
+  name: "flask-app-sa"
+
+podDisruptionBudget:
+  enabled: false
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 5000
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 70
