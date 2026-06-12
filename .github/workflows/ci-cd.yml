@@ -70,7 +70,7 @@ jobs:
 
     - name: Deploy to AKS
       run: |
-        kubectl apply -f namespaces.yaml
-        kubectl apply -f deployment.yaml
-        kubectl apply -f service.yaml
-        kubectl apply -f monitoring.yaml
+        kubectl apply -f k8s/namespaces.yaml
+        kubectl apply -f k8s/deployment.yaml
+        kubectl apply -f k8s/service.yaml
+        kubectl apply -f k8s/monitoring.yaml
